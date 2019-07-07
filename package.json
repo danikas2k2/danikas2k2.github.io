@@ -1,0 +1,58 @@
+{
+    "name": "danikas2k2",
+    "version": "0.0.1",
+    "description": "",
+    "main": "index.html",
+    "scripts": {
+        "build": "webpack",
+        "watch": "webpack --watch",
+        "version": "npm build",
+        "postversion": "git add --all && git commit -m \"v${npm_package_version} (dist)\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://danikas2k2@bitbucket.org/danikas2k2/danikas2k2.git"
+    },
+    "browser": [
+        "last 1 version",
+        "> 1%",
+        "not dead"
+    ],
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "homepage": "https://bitbucket.org/danikas2k2/danikas2k2#readme",
+    "devDependencies": {
+        "@types/core-js": "^2.5.0",
+        "@types/md5": "^2.1.33",
+        "@types/node": "^10.14.8",
+        "@types/react": "^16.8.19",
+        "@types/uglifyjs-webpack-plugin": "^1.1.0",
+        "@types/webpack": "^4.4.32",
+        "@typescript-eslint/eslint-plugin": "^1.11.0",
+        "@typescript-eslint/parser": "^1.11.0",
+        "css-loader": "^2.1.1",
+        "eslint": "^6.0.1",
+        "eslint-config-standard": "^12.0.0",
+        "eslint-plugin-import": "^2.18.0",
+        "eslint-plugin-node": "^9.1.0",
+        "eslint-plugin-promise": "^4.2.1",
+        "eslint-plugin-standard": "^4.0.0",
+        "less": "^3.9.0",
+        "less-loader": "^4.1.0",
+        "style-loader": "^0.23.1",
+        "stylelint": "^10.1.0",
+        "stylelint-config-recommended": "^2.2.0",
+        "svg-inline-loader": "^0.8.0",
+        "svg-url-loader": "^2.3.2",
+        "to-string-loader": "^1.1.5",
+        "ts-loader": "^5.4.5",
+        "ts-node": "^7.0.1",
+        "typed-css-modules": "^0.3.7",
+        "typescript": "^3.5.1",
+        "typings-for-css-modules-loader": "^1.7.0",
+        "webpack": "^4.33.0",
+        "webpack-auto-inject-version": "^1.2.2",
+        "webpack-cli": "^3.3.3"
+    }
+}

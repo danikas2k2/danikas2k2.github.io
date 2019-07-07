@@ -1,0 +1,39 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "target": "esnext",
+        "jsx": "react",
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "allowSyntheticDefaultImports": true,
+        "allowJs": true,
+        "checkJs": true,
+        "alwaysStrict": true,
+        "downlevelIteration": true,
+        "experimentalDecorators": true,
+        "incremental": true,
+        "moduleResolution": "node",
+        "noImplicitAny": true,
+        "preserveConstEnums": true,
+        "pretty": true,
+        "lib": [
+            "esnext",
+            "dom",
+            "dom.iterable"
+        ],
+        "typeRoots" : [
+            "./node_modules/@types",
+            "./@types"
+        ]
+    },
+    "include": [
+        "**/*"
+    ],
+    "exclude": [
+        "dist",
+        "public",
+        "node_modules",
+        "**/*.spec.ts"
+    ]
+}
