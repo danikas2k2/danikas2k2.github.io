@@ -25,7 +25,7 @@
     "devDependencies": {
         "@types/core-js": "^2.5.0",
         "@types/md5": "^2.1.33",
-        "@types/node": "^10.14.8",
+        "@types/node": "^10.14.13",
         "@types/react": "^16.8.19",
         "@types/uglifyjs-webpack-plugin": "^1.1.0",
         "@types/webpack": "^4.4.35",
@@ -51,9 +51,11 @@
         "typed-css-modules": "^0.3.7",
         "typescript": "^3.5.3",
         "typings-for-css-modules-loader": "^1.7.0",
-        "webpack": "^4.35.3",
+        "webpack": "^4.36.1",
         "webpack-auto-inject-version": "^1.2.2",
         "webpack-cli": "^3.3.6"
     },
-    "dependencies": {}
+    "dependencies": {
+        "mem": "^4.3.0"
+    }
 }
