@@ -1,10 +1,10 @@
 {
     "name": "danikas2k2",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "",
     "main": "index.html",
     "scripts": {
-        "postversion": "git add --all && git commit -m \"v${npm_package_version} (dist)\""
+        "postversion": "git add --all"
     },
     "repository": {
         "type": "git",
