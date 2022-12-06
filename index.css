@@ -1,0 +1,121 @@
+/*noinspection CssUnknownTarget*/
+@import url('https://fonts.googleapis.com/css?family=Neucha|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese');
+
+body {
+    color: #4b3f00;
+    font-family: 'Neucha', 'Open Sans', sans-serif;
+    margin: 0 auto;
+    /*noinspection CssUnknownTarget*/
+    background: #f7f5f3 url(coffee.jpg) top center / 100% no-repeat;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+h1 {
+    font-weight: 100;
+    font-family: 'Neucha', cursive;
+    font-size: 3em;
+}
+
+.p {
+    padding-top: 60%;
+}
+
+.pp {
+    border-radius: 50%;
+    width: 160px;
+    overflow: hidden;
+    border: 6px solid #f7f5f3;
+}
+
+.d {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.s {
+    display: flex;
+    justify-content: center;
+}
+
+.s a {
+    /*noinspection CssUnknownTarget*/
+    background: url(social.png) 0 0 / 1000px no-repeat;
+    width: 32px;
+    height: 32px;
+    flex: 0 0 32px;
+}
+
+.s a + a {
+    margin-left: 1em;
+}
+
+.s a.fb {
+    background-position: 0 0;
+}
+
+.s a.tw {
+    background-position: -51px 0;
+}
+
+.s a.li {
+    background-position: -153px 0;
+}
+
+.s a.ig {
+    background-position: -204px -73px;
+}
+
+.s a.gh {
+    background-position: -153px -146px;
+}
+
+@media (orientation: landscape) {
+    body {
+        flex-flow: row wrap;
+        align-items: flex-end;
+        background-position: bottom -150% center;
+    }
+
+    .p {
+        /*padding-top: 0;*/
+        /*position: absolute;*/
+        /*bottom: 35%;*/
+        /*left: 0;*/
+        /*right: 0;*/
+        /*text-align: center;*/
+        /*margin: auto;*/
+    }
+
+    .d {
+        flex: 1 0 auto;
+        justify-content: space-around;
+        bottom: 0;
+    }
+
+    .d h1:before {
+        content: attr(data-content);
+        -webkit-text-stroke: 8px white;
+        position: absolute;
+        z-index: -1;
+    }
+
+    h1, p, .s {
+        margin: .2rem 0;
+    }
+}
+
+/*
+@media (orientation: landscape) and (max-width: 768px) {
+    .p {
+        bottom: 18%;
+        width: 88%;
+    }
+
+    .d {
+        height: 23%;
+    }
+}
+*/
