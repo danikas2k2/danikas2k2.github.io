@@ -1,0 +1,184 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+    :root {
+        --horizontal: 0deg;
+        --vertical: 0deg;
+    }
+
+    .test {
+        position: absolute;
+        inset: 0;
+        background-color: #fff;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        border-block: 10vh solid hsl(var(--horizontal), 100%, 50%);
+        border-inline: 10vw solid hsl(var(--vertical), 100%, 50%);
+    }
+
+    @media (orientation: portrait) {
+        .test::before {
+            content: 'portrait';
+        }
+    }
+
+    @media (orientation: landscape) {
+        .test::before {
+            content: 'landscape';
+        }
+    }
+
+    .width::before {
+        content: 'XXS';
+    }
+
+    .height::before {
+        content: 'XXS';
+    }
+
+    @media (min-width: 360px) {
+        .test {
+            --horizontal: 30deg;
+        }
+
+        .width::before {
+            content: 'XS';
+        }
+    }
+
+    @media (min-width: 640px) {
+        .test {
+            --horizontal: 60deg;
+        }
+
+        .width::before {
+            content: 'S';
+        }
+    }
+
+    @media (min-width: 768px) {
+        .test {
+            --horizontal: 120deg;
+        }
+
+        .width::before {
+            content: 'M';
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .test {
+            --horizontal: 180deg;
+        }
+
+        .width::before {
+            content: 'L';
+        }
+    }
+
+    @media (min-width: 1280px) {
+        .test {
+            --horizontal: 240deg;
+        }
+
+        .width::before {
+            content: 'XL';
+        }
+    }
+
+    @media (min-width: 1440px) {
+        .test {
+            --horizontal: 300deg;
+        }
+
+        .width::before {
+            content: 'XXL';
+        }
+    }
+
+
+    @media (min-height: 360px) {
+        .test {
+            --vertical: 30deg;
+        }
+
+        .height::before {
+            content: 'XS';
+        }
+    }
+
+    @media (min-height: 640px) {
+        .test {
+            --vertical: 60deg;
+        }
+
+        .height::before {
+            content: 'S';
+        }
+    }
+
+    @media (min-height: 768px) {
+        .test {
+            --vertical: 120deg;
+        }
+
+        .height::before {
+            content: 'M';
+        }
+    }
+
+    @media (min-height: 1024px) {
+        .test {
+            --vertical: 180deg;
+        }
+
+        .height::before {
+            content: 'L';
+        }
+    }
+
+    @media (min-height: 1280px) {
+        .test {
+            --vertical: 240deg;
+        }
+
+        .height::before {
+            content: 'XL';
+        }
+    }
+
+    @media (min-height: 1440px) {
+        .test {
+            --vertical: 300deg;
+        }
+
+        .height::before {
+            content: 'XXL';
+        }
+    }
+
+
+</style>
+<div class="test">
+    <div class="width"></div>
+    <div class="height"></div>
+    <pre id="debug">
+    </pre>
+</div>
+<script>
+    const debug = document.getElementById('debug');
+
+    function update() {
+        debug.textContent = `width: ${window.screen.width}
+height: ${window.screen.height}
+availWidth: ${window.screen.availWidth}
+availHeight: ${window.screen.availHeight}
+orientation: ${window.screen.orientation.type}
+angle: ${window.screen.orientation.angle}
+devicePixelRatio: ${window.devicePixelRatio}`;
+    }
+
+    window.addEventListener('resize', update);
+    update();
+</script>
