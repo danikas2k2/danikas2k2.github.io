@@ -1,4 +1,4 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <style>
     :root {
         --horizontal: 0deg;
@@ -17,23 +17,111 @@
         border-inline: 10vw solid hsl(var(--vertical), 100%, 50%);
     }
 
+    .orientation::before {
+        content: 'orientation: ';
+    }
+
     @media (orientation: portrait) {
-        .test::before {
+        .orientation::after {
             content: 'portrait';
         }
     }
 
     @media (orientation: landscape) {
-        .test::before {
+        .orientation::after {
             content: 'landscape';
         }
     }
 
+    .hover::before {
+        content: 'hover: ';
+    }
+
+    @media (hover: hover) {
+        .hover::after {
+            content: 'hover';
+        }
+    }
+
+    @media (hover: none) {
+        .hover::after {
+            content: 'none';
+        }
+    }
+
+    .any-hover::before {
+        content: 'hover: ';
+    }
+
+    @media (hover: hover) {
+        .any-hover::after {
+            content: 'hover';
+        }
+    }
+
+    @media (hover: none) {
+        .any-hover::after {
+            content: 'none';
+        }
+    }
+
+    .pointer::before {
+        content: 'pointer: ';
+    }
+
+    @media (pointer: coarse) {
+        .pointer::after {
+            content: 'coarse';
+        }
+    }
+
+    @media (pointer: fine) {
+        .pointer::after {
+            content: 'fine';
+        }
+    }
+
+    @media (pointer: none) {
+        .pointer::after {
+            content: 'none';
+        }
+    }
+
+    .any-pointer::before {
+        content: 'pointer: ';
+    }
+
+    @media (pointer: coarse) {
+        .any-pointer::after {
+            content: 'coarse';
+        }
+    }
+
+    @media (pointer: fine) {
+        .any-pointer::after {
+            content: 'fine';
+        }
+    }
+
+    @media (pointer: none) {
+        .any-pointer::after {
+            content: 'none';
+        }
+    }
+
     .width::before {
+        content: 'width: ';
+    }
+
+    .width::after {
         content: 'XXS';
     }
 
     .height::before {
+        content: 'height: ';
+    }
+
+    .height::after {
         content: 'XXS';
     }
 
@@ -42,7 +130,7 @@
             --horizontal: 30deg;
         }
 
-        .width::before {
+        .width::after {
             content: 'XS';
         }
     }
@@ -52,7 +140,7 @@
             --horizontal: 60deg;
         }
 
-        .width::before {
+        .width::after {
             content: 'S';
         }
     }
@@ -62,7 +150,7 @@
             --horizontal: 120deg;
         }
 
-        .width::before {
+        .width::after {
             content: 'M';
         }
     }
@@ -72,7 +160,7 @@
             --horizontal: 180deg;
         }
 
-        .width::before {
+        .width::after {
             content: 'L';
         }
     }
@@ -82,7 +170,7 @@
             --horizontal: 240deg;
         }
 
-        .width::before {
+        .width::after {
             content: 'XL';
         }
     }
@@ -92,7 +180,7 @@
             --horizontal: 300deg;
         }
 
-        .width::before {
+        .width::after {
             content: 'XXL';
         }
     }
@@ -103,7 +191,7 @@
             --vertical: 30deg;
         }
 
-        .height::before {
+        .height::after {
             content: 'XS';
         }
     }
@@ -113,7 +201,7 @@
             --vertical: 60deg;
         }
 
-        .height::before {
+        .height::after {
             content: 'S';
         }
     }
@@ -123,7 +211,7 @@
             --vertical: 120deg;
         }
 
-        .height::before {
+        .height::after {
             content: 'M';
         }
     }
@@ -133,7 +221,7 @@
             --vertical: 180deg;
         }
 
-        .height::before {
+        .height::after {
             content: 'L';
         }
     }
@@ -143,7 +231,7 @@
             --vertical: 240deg;
         }
 
-        .height::before {
+        .height::after {
             content: 'XL';
         }
     }
@@ -153,7 +241,7 @@
             --vertical: 300deg;
         }
 
-        .height::before {
+        .height::after {
             content: 'XXL';
         }
     }
@@ -161,8 +249,13 @@
 
 </style>
 <div class="test">
+    <div class="orientation"></div>
     <div class="width"></div>
     <div class="height"></div>
+    <div class="hover"></div>
+    <div class="any-hover"></div>
+    <div class="pointer"></div>
+    <div class="any-pointer"></div>
     <pre id="debug">
     </pre>
 </div>
@@ -174,13 +267,23 @@
 innerHeight: ${window.innerHeight}
 outerWidth: ${window.outerWidth}
 outerHeight: ${window.outerHeight}
+devicePixelRatio: ${window.devicePixelRatio}
+
 screen.width: ${window.screen.width}
 screen.height: ${window.screen.height}
 screen.availWidth: ${window.screen.availWidth}
 screen.availHeight: ${window.screen.availHeight}
-orientation: ${window.screen.orientation.type}
-angle: ${window.screen.orientation.angle}
-devicePixelRatio: ${window.devicePixelRatio}`;
+screen.colorDepth: ${window.screen.colorDepth}
+screen.pixelDepth: ${window.screen.pixelDepth}
+orientation.type: ${window.screen.orientation.type}
+orientation.angle: ${window.screen.orientation.angle}
+
+@orientation: ${window.matchMedia('(orientation: portrait)').matches && 'portrait' || window.matchMedia('(orientation: landscape)').matches && 'landscape' || 'none'}
+@hover: ${window.matchMedia('(hover: hover)').matches && 'hover' || 'none'}
+@any-hover: ${window.matchMedia('(any-hover: hover)').matches && 'hover' || 'none'}
+@pointer: ${window.matchMedia('(pointer: fine)').matches && 'fine' || window.matchMedia('(pointer: coarse)').matches && 'coarse' || 'none'}
+@any-pointer: ${window.matchMedia('(any-pointer: fine)').matches && 'fine' || window.matchMedia('(any-pointer: coarse)').matches && 'coarse' || 'none'}
+`;
     }
 
     window.addEventListener('resize', update);
