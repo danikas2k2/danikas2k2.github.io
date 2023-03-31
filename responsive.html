@@ -170,10 +170,14 @@
     const debug = document.getElementById('debug');
 
     function update() {
-        debug.textContent = `width: ${window.screen.width}
-height: ${window.screen.height}
-availWidth: ${window.screen.availWidth}
-availHeight: ${window.screen.availHeight}
+        debug.textContent = `innerWidth: ${window.innerWidth}
+innerHeight: ${window.innerHeight}
+outerWidth: ${window.outerWidth}
+outerHeight: ${window.outerHeight}
+screen.width: ${window.screen.width}
+screen.height: ${window.screen.height}
+screen.availWidth: ${window.screen.availWidth}
+screen.availHeight: ${window.screen.availHeight}
 orientation: ${window.screen.orientation.type}
 angle: ${window.screen.orientation.angle}
 devicePixelRatio: ${window.devicePixelRatio}`;
